@@ -84,7 +84,7 @@ public class AutoDrivingCar : IAutoDrivingCarSimulator, IAutoDrivingCarCollision
                             break;
                     }
                     if (carX < 0 || carX >= width || carY < 0 || carY >= height)
-                        break; // Ignore commands that move the car out of bounds
+                        break;
                 }
                 else if (commands[i] == 'L')
                 {
