@@ -9,10 +9,18 @@ namespace AutoDrivingCarSimulation.UnitTests
         private readonly AutoDrivingCar _simulatorMock;
         private readonly AutoDrivingCar _collisionMock;
 
+        // Doesn't work propely 
+        //private readonly Mock<IAutoDrivingCarSimulator> _simulatorMock;
+        //private readonly Mock<IAutoDrivingCarCollision> _collisionMock;
+
+
         public AutoDrivingCarSimulatorTests()
         {
             _simulatorMock = new AutoDrivingCar();
             _collisionMock = new AutoDrivingCar();
+
+            //_simulatorMock = new Mock<IAutoDrivingCarSimulator>();
+            //_collisionMock = new Mock<IAutoDrivingCarCollision>();
         }
 
         [Fact]
