@@ -1,6 +1,6 @@
 ﻿using AutoDrivingCarSimulation.Command;
 using AutoDrivingCarSimulation.Interface;
-using AutoDrivingCarSimulation.Persistence;
+using AutoDrivingCarSimulation.Enum;
 using System.Formats.Tar;
 
 namespace AutoDrivingCarSimulation.Services;
@@ -24,37 +24,6 @@ public class AutoDrivingCar : IAutoDrivingCarSimulator, IAutoDrivingCarCollision
 
         return (car.X, car.Y, car.FacingDirection);
     }
-
-    //public string CheckCollision(int width, int height, Dictionary<string, (Car, string)> cars)
-    //{
-    //    var positions = new Dictionary<string, HashSet<(int, int)>>();
-    //    foreach (var carEntry in cars)
-    //    {
-    //        var (car, commands) = carEntry.Value;
-    //        var carPositions = new HashSet<(int, int)>();
-    //        positions.Add(carEntry.Key, carPositions);
-
-    //        foreach (var command in commands)
-    //        {
-    //            var newCar = new Car(car.X, car.Y, car.FacingDirection);
-    //            newCar.ExecuteCommand(command);
-
-    //            if (newCar.X < 0 || newCar.X >= width || newCar.Y < 0 || newCar.Y >= height)
-    //                break;
-
-    //            car = newCar;
-
-    //            carPositions.Add((car.X, car.Y));
-    //        }
-    //    }
-
-    //    for (var i = 0; i < positions["A"].Count; i++)
-    //    {
-    //        if (positions["A"].ElementAt(i) == positions["B"].ElementAt(i))
-    //            return $"{positions["A"].ElementAt(i).Item1} {positions["A"].ElementAt(i).Item2} {i + 1}";
-    //    }
-    //    return "no collision";
-    //}
 
     public string CheckCollision(int width, int height, Dictionary<string, (int, int, Direction, string)> cars)
     {

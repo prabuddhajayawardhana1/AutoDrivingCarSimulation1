@@ -1,5 +1,5 @@
 using AutoDrivingCarSimulation.Interface;
-using AutoDrivingCarSimulation.Persistence;
+using AutoDrivingCarSimulation.Enum;
 using AutoDrivingCarSimulation.Services;
 
 namespace AutoDrivingCarSimulation.UnitTests
@@ -9,18 +9,10 @@ namespace AutoDrivingCarSimulation.UnitTests
         private readonly AutoDrivingCar _simulatorMock;
         private readonly AutoDrivingCar _collisionMock;
 
-        // Doesn't work propely 
-        //private readonly Mock<IAutoDrivingCarSimulator> _simulatorMock;
-        //private readonly Mock<IAutoDrivingCarCollision> _collisionMock;
-
-
         public AutoDrivingCarSimulatorTests()
         {
             _simulatorMock = new AutoDrivingCar();
             _collisionMock = new AutoDrivingCar();
-
-            //_simulatorMock = new Mock<IAutoDrivingCarSimulator>();
-            //_collisionMock = new Mock<IAutoDrivingCarCollision>();
         }
 
         [Fact]
@@ -33,11 +25,6 @@ namespace AutoDrivingCarSimulation.UnitTests
             int y = 2;
             Direction direction = Direction.N;
             string commands = "FFRFFFRRLF";
-
-            //_simulatorMock.Setup(m => m.SimulateCar(width, height, x, y, direction, commands))
-            //              .Returns((4, 3, Direction.S));
-
-            //var simulator = _simulatorMock.Object;
 
             // Act
             var result = _simulatorMock.SimulateCar(width, height, x, y, direction, commands);
@@ -60,11 +47,6 @@ namespace AutoDrivingCarSimulation.UnitTests
                 { "B", (7, 8, Direction.W, "FFLFFFFFFF") }
             };
 
-            //_collisionMock.Setup(m => m.CheckCollision(width, height, cars))
-            //              .Returns("5 4 7");
-
-            //var collision = _collisionMock.Object;
-
             // Act
             var result = _collisionMock.CheckCollision(width, height, cars);
 
@@ -83,11 +65,6 @@ namespace AutoDrivingCarSimulation.UnitTests
                 { "A", (1, 2, Direction.N, "FFRFFFFRRL") },
                 { "B", (3, 7, Direction.W, "FFLFFFFFFF") }
             };
-
-            //_collisionMock.Setup(m => m.CheckCollision(width, height, cars))
-            //              .Returns("no collision");
-
-            //var collision = _collisionMock.Object;
 
             // Act
             var result = _collisionMock.CheckCollision(width, height, cars);

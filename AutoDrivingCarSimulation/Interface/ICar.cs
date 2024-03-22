@@ -1,4 +1,4 @@
-﻿using AutoDrivingCarSimulation.Persistence;
+﻿using AutoDrivingCarSimulation.Enum;
 
 namespace AutoDrivingCarSimulation.Interface;
 public interface ICar

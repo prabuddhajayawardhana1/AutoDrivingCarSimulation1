@@ -1,6 +1,6 @@
 ﻿using AutoDrivingCarSimulation.Command;
 using AutoDrivingCarSimulation.Interface;
-using AutoDrivingCarSimulation.Persistence;
+using AutoDrivingCarSimulation.Enum;
 
 namespace AutoDrivingCarSimulation.Services;
 

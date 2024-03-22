@@ -1,4 +1,4 @@
-﻿namespace AutoDrivingCarSimulation.Persistence;
+﻿namespace AutoDrivingCarSimulation.Enum;
 
 public enum Direction
 {
